@@ -46,7 +46,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         collectionView.isUserInteractionEnabled = false
         collectionView.reloadData()
-        timerLabel.text = String(format: "%@: ---", NSLocalizedString("TIME", comment: "time"))
+      //  timerLabel.text = String(format: "%@: ---", NSLocalizedString("TIME", comment: "time"))
         playButton.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
     }
     
@@ -65,9 +65,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         gameController.newGame(cardsData)
     }
     
-    func gameTimerAction() {
-        timerLabel.text = String(format: "%@: %.0fs", NSLocalizedString("TIME", comment: "time"), gameController.elapsedTime)
-    }
+//    func gameTimerAction() {
+//        timerLabel.text = String(format: "%@: %.0fs", NSLocalizedString("TIME", comment: "time"), gameController.elapsedTime)
+//    }
     
     
     
@@ -118,7 +118,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.reloadData()
         collectionView.isUserInteractionEnabled = true
 
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.gameTimerAction), userInfo: nil, repeats: true)
+       // timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.gameTimerAction), userInfo: nil, repeats: true)
 
     }
 
