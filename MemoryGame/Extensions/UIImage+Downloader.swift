@@ -2,8 +2,8 @@
 //  UIImage+Downloader.swift
 //  MemoryGame
 //
-//  Created by Daniel Tsirulnikov on 17/04/16.
-//  Copyright © 2016 Daniel Tsirulnikov. All rights reserved.
+//  Created by Vishwas Mukund on 17/04/16.
+//  
 //
 //  Based on a method from:
 //  https://github.com/PerrchicK/swift-app/blob/master/SomeApp/SomeApp/Classes/Utilities/PerrFuncs.swift

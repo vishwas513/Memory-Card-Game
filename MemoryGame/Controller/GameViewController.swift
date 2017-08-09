@@ -2,8 +2,8 @@
 //  GameViewController.swift
 //  MemoryGame
 //
-//  Created by Daniel Tsirulnikov on 19.3.2016.
-//  Copyright © 2016 Daniel Tsirulnikov. All rights reserved.
+//  Created by Vishwas Mukund on 8/8/2017.
+//  
 //
 
 import UIKit
@@ -46,7 +46,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         collectionView.isUserInteractionEnabled = false
         collectionView.reloadData()
-      //  timerLabel.text = String(format: "%@: ---", NSLocalizedString("TIME", comment: "time"))
+      
         playButton.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
     }
     
@@ -65,20 +65,14 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         gameController.newGame(cardsData)
     }
     
-//    func gameTimerAction() {
-//        timerLabel.text = String(format: "%@: %.0fs", NSLocalizedString("TIME", comment: "time"), gameController.elapsedTime)
-//    }
-    
-    
-    
-    // MARK: - UICollectionViewDataSource
+
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 16 //gameController.numberOfCards > 0 ? gameController.numberOfCards : 16
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,7 +85,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    // MARK: UICollectionViewDelegate
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CardCVC
@@ -102,12 +96,12 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.deselectItem(at: indexPath, animated:true)
     }
     
-    // MARK: - UICollectionViewDataSource
+   
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //let numberOfColumns:Int = self.collectionView(collectionView, numberOfItemsInSection: indexPath.section)
         
-        let itemWidth: CGFloat = collectionView.frame.width / 4.0 - 15.0 //numberOfColumns as CGFloat - 10 //- (minimumInteritemSpacing * numberOfColumns))
+        
+        let itemWidth: CGFloat = collectionView.frame.width / 4.0 - 15.0
 
         return CGSize(width: itemWidth, height: itemWidth)
     }
@@ -118,7 +112,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.reloadData()
         collectionView.isUserInteractionEnabled = true
 
-       // timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.gameTimerAction), userInfo: nil, repeats: true)
+ 
 
     }
 
@@ -142,17 +136,17 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func memoryGameDidEnd(_ game: MemoryGame, elapsedTime: TimeInterval) {
         timer?.invalidate()
 
-        let elapsedTime = gameController.elapsedTime
+
         
         let alertController = UIAlertController(
             title: NSLocalizedString("Hurrah!", comment: "title"),
-            message: String(format: "%@ %.0f seconds", NSLocalizedString("You finished the game in", comment: "message"), elapsedTime),
+            message: String(format: "%@ %.0f seconds", NSLocalizedString("You finished the game in", comment: "message")),
             preferredStyle: .alert)
         
-        let saveScoreAction = UIAlertAction(title: NSLocalizedString("Save Score", comment: "save score"), style: .default) { [weak self] (_) in
+        let saveScoreAction = UIAlertAction(title: NSLocalizedString("OK", comment: "Ok"), style: .default) { [weak self] (_) in
             let nameTextField = alertController.textFields![0] as UITextField
             guard let name = nameTextField.text else { return }
-         //   self?.savePlayerScore(name, score: elapsedTime)
+    
             self?.resetGame()
         }
         saveScoreAction.isEnabled = false

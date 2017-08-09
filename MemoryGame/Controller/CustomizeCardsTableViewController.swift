@@ -2,8 +2,8 @@
 //  CustomizeCardsTableViewController.swift
 //  MemoryGame
 //
-//  Created by Daniel Tsirulnikov on 17/04/16.
-//  Copyright © 2016 Daniel Tsirulnikov. All rights reserved.
+//  Created by Vishwas Mukund on 17/04/16.
+//  
 //
 
 import UIKit

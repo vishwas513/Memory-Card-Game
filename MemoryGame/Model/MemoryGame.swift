@@ -2,8 +2,8 @@
 //  MemoryGameController.swift
 //  MemoryGame
 //
-//  Created by Daniel Tsirulnikov on 19.3.2016.
-//  Copyright © 2016 Daniel Tsirulnikov. All rights reserved.
+//  Created by Vishwas Mukund on 8/8/2017.
+//  
 //
 
 import Foundation

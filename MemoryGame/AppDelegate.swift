@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  MemoryGame
 //
-//  Created by Daniel Tsirulnikov on 26/03/16.
-//  Copyright © 2016 Daniel Tsirulnikov. All rights reserved.
+//  Created by Vishwas Mukund on 26/03/16.
+//  
 //
 // Icons:
 // https://www.iconfinder.com/icons/387526/answer_ask_mark_question_icon#size=128

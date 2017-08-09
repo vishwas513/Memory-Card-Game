@@ -2,24 +2,24 @@
 //  ScoresTableViewController.swift
 //  MemoryGame
 //
-//  Created by Daniel Tsirulnikov on 17/04/16.
-//  Copyright © 2016 Daniel Tsirulnikov. All rights reserved.
+//  Created by Vishwas Mukund on 17/04/16.
+//  
 //
 
 import UIKit
 
 class ScoresTableViewController: UITableViewController {
 
-    // MARK: - Properties
+  
 
     var scores: Array<Dictionary<String,String>> = []
 
-    // MARK: - Lifecycle
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // scores = Highscores.sharedInstance.getHighscores()
+      
         tableView.reloadData()
     }
 
@@ -33,7 +33,7 @@ class ScoresTableViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    // MARK: - UITableViewDataSource
+   
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return scores.count == 0 ? 0 : 1
@@ -46,7 +46,7 @@ class ScoresTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath)
 
-        // Configure the cell...
+       
         let score = scores[indexPath.row]
         let name = score["name"]!
         let time = Double(score["score"]!)
@@ -58,7 +58,7 @@ class ScoresTableViewController: UITableViewController {
         return cell
     }
 
-    // MARK: - UITableViewDelegate
+
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
