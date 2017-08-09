@@ -5,9 +5,6 @@
 //  Created by Vishwas Mukund on 26/03/16.
 //  
 //
-// Icons:
-// https://www.iconfinder.com/icons/387526/answer_ask_mark_question_icon#size=128
-// https://www.iconfinder.com/iconsets/brands-flat-1
 
 import UIKit
 
